@@ -73,10 +73,10 @@ export function Card({ elevation, onPress }: CardProps) {
         animatedStyle,
       ]}
     >
-      <ThemedText type="h4" style={styles.cardTitle}>
+      <ThemedText type="body" style={styles.cardTitle}>
         Card - Elevation {elevation}
       </ThemedText>
-      <ThemedText type="small" style={styles.cardDescription}>
+      <ThemedText type="bodySmall" style={styles.cardDescription}>
         This card has an elevation of {elevation}
       </ThemedText>
     </AnimatedPressable>
@@ -86,7 +86,7 @@ export function Card({ elevation, onPress }: CardProps) {
 const styles = StyleSheet.create({
   card: {
     padding: Spacing.xl,
-    borderRadius: BorderRadius["2xl"],
+    borderRadius: 40,
   },
   cardTitle: {
     marginBottom: Spacing.sm,
