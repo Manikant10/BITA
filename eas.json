@@ -2,7 +2,7 @@
   "cli": {
     "appVersionSource": "remote"
   },
-  "projectId": "12345678-abcd-1234-abcd-1234567890ab",
+  "projectId": "9db8001a-bc2a-47ba-ad64-6864f6179067",
   "build": {
     "production": {
       "autoIncrement": true,
