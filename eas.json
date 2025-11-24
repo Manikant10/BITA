@@ -1,6 +1,11 @@
 {
+  "cli": {
+    "appVersionSource": "remote"
+  },
+  "projectId": "YOUR-PROJECT-ID-HERE",
   "build": {
     "production": {
+      "autoIncrement": true,
       "android": {
         "buildType": "app-bundle"
       }
