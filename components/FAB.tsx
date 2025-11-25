@@ -72,16 +72,24 @@ export function FAB({ actions }: FABProps) {
         ]}
       >
         <LinearGradient
-          colors={theme.gradientPrimary}
+          colors={theme.gradientPrimary as [string, string]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={styles.gradient}
         >
-          <MaterialCommunityIcons name="plus" size={28} color={theme.buttonText} />
+          <MaterialCommunityIcons
+            name="plus"
+            size={28}
+            color={theme.buttonText}
+          />
         </LinearGradient>
       </AnimatedPressable>
 
-      <Modal visible={isOpen} transparent onRequestClose={() => setIsOpen(false)}>
+      <Modal
+        visible={isOpen}
+        transparent
+        onRequestClose={() => setIsOpen(false)}
+      >
         <Pressable style={styles.modalOverlay} onPress={() => setIsOpen(false)}>
           <View
             style={[

@@ -33,8 +33,8 @@ export default function AttendanceScreen() {
   const toggleAttendance = (id: string) => {
     setStudents((prev) =>
       prev.map((student) =>
-        student.id === id ? { ...student, present: !student.present } : student
-      )
+        student.id === id ? { ...student, present: !student.present } : student,
+      ),
     );
   };
 
@@ -73,18 +73,29 @@ export default function AttendanceScreen() {
                   style={[
                     styles.checkbox,
                     {
-                      backgroundColor: item.present ? theme.success : "transparent",
-                      borderColor: item.present ? theme.success : theme.textSecondary,
+                      backgroundColor: item.present
+                        ? theme.success
+                        : "transparent",
+                      borderColor: item.present
+                        ? theme.success
+                        : theme.textSecondary,
                     },
                   ]}
                 >
                   {item.present && (
-                    <MaterialCommunityIcons name="check" size={16} color={theme.buttonText} />
+                    <MaterialCommunityIcons
+                      name="check"
+                      size={16}
+                      color={theme.buttonText}
+                    />
                   )}
                 </View>
                 <View style={styles.studentDetails}>
                   <ThemedText type="body">{item.name}</ThemedText>
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     Roll No: {item.rollNo}
                   </ThemedText>
                 </View>
@@ -96,9 +107,12 @@ export default function AttendanceScreen() {
           contentContainerStyle={{ paddingBottom: 100 }}
         />
 
-        <View style={[styles.footer, { backgroundColor: theme.backgroundRoot }]}>
+        <View
+          style={[styles.footer, { backgroundColor: theme.backgroundRoot }]}
+        >
           <GradientButton onPress={submitAttendance}>
-            Submit Attendance ({students.filter((s) => s.present).length}/{students.length})
+            Submit Attendance ({students.filter((s) => s.present).length}/
+            {students.length})
           </GradientButton>
         </View>
       </ThemedView>
@@ -111,12 +125,17 @@ export default function AttendanceScreen() {
         <View style={styles.header}>
           <ThemedText type="h2">My Attendance</ThemedText>
           <View style={styles.statCard}>
-            <View style={[styles.progressCircle, { borderColor: theme.success }]}>
+            <View
+              style={[styles.progressCircle, { borderColor: theme.success }]}
+            >
               <ThemedText type="h1" style={{ color: theme.success }}>
                 88%
               </ThemedText>
             </View>
-            <ThemedText type="bodySmall" style={[styles.statLabel, { color: theme.textSecondary }]}>
+            <ThemedText
+              type="bodySmall"
+              style={[styles.statLabel, { color: theme.textSecondary }]}
+            >
               Overall Attendance
             </ThemedText>
           </View>
@@ -125,7 +144,7 @@ export default function AttendanceScreen() {
         <ThemedText type="h2" style={styles.sectionTitle}>
           Subject-wise Breakdown
         </ThemedText>
-        
+
         <SubjectAttendance
           subject="Data Structures"
           percentage={92}
@@ -157,17 +176,32 @@ export default function AttendanceScreen() {
 
 function SubjectAttendance({ subject, percentage, present, total }: any) {
   const { theme } = useTheme();
-  const color = percentage >= 85 ? theme.success : percentage >= 75 ? theme.warning : theme.error;
+  const color =
+    percentage >= 85
+      ? theme.success
+      : percentage >= 75
+        ? theme.warning
+        : theme.error;
 
   return (
-    <View style={[styles.subjectCard, { backgroundColor: theme.backgroundDefault, borderColor: theme.border }]}>
+    <View
+      style={[
+        styles.subjectCard,
+        { backgroundColor: theme.backgroundDefault, borderColor: theme.border },
+      ]}
+    >
       <View style={styles.subjectHeader}>
         <ThemedText type="body">{subject}</ThemedText>
         <ThemedText type="h2" style={{ color }}>
           {percentage}%
         </ThemedText>
       </View>
-      <View style={[styles.progressBar, { backgroundColor: theme.backgroundSecondary }]}>
+      <View
+        style={[
+          styles.progressBar,
+          { backgroundColor: theme.backgroundSecondary },
+        ]}
+      >
         <View
           style={[
             styles.progressFill,

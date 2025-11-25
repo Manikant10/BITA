@@ -13,7 +13,7 @@ import { BorderRadius, Spacing } from "@/constants/theme";
 
 interface GradientButtonProps {
   onPress?: () => void;
-  children: string;
+  children: React.ReactNode;
   style?: StyleProp<ViewStyle>;
   disabled?: boolean;
   variant?: "primary" | "accent";
@@ -55,8 +55,9 @@ export function GradientButton({
     }
   };
 
-  const gradientColors =
-    variant === "primary" ? theme.gradientPrimary : theme.gradientAccent;
+  const gradientColors = (
+    variant === "primary" ? theme.gradientPrimary : theme.gradientAccent
+  ) as [string, string];
 
   return (
     <AnimatedPressable
@@ -72,7 +73,10 @@ export function GradientButton({
         end={{ x: 1, y: 0 }}
         style={styles.gradient}
       >
-        <ThemedText type="button" style={[styles.buttonText, { color: theme.buttonText }]}>
+        <ThemedText
+          type="button"
+          style={[styles.buttonText, { color: theme.buttonText }]}
+        >
           {children}
         </ThemedText>
       </LinearGradient>

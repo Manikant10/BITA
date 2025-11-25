@@ -22,13 +22,13 @@ export default function AITimetableScreen() {
     }
 
     setLoading(true);
-    
+
     setTimeout(() => {
       setLoading(false);
       Alert.alert(
         "Success",
         "AI Timetable generated successfully!\n\nThis is a demo. In production, this would use OpenAI API to generate an optimized timetable based on your constraints.",
-        [{ text: "OK" }]
+        [{ text: "OK" }],
       );
     }, 3000);
   };
@@ -36,13 +36,25 @@ export default function AITimetableScreen() {
   return (
     <ScreenKeyboardAwareScrollView>
       <View style={styles.container}>
-        <View style={[styles.infoCard, { backgroundColor: theme.backgroundDefault, borderColor: theme.border }]}>
+        <View
+          style={[
+            styles.infoCard,
+            {
+              backgroundColor: theme.backgroundDefault,
+              borderColor: theme.border,
+            },
+          ]}
+        >
           <ThemedText type="h2" style={styles.infoTitle}>
             AI-Powered Timetable Generator
           </ThemedText>
-          <ThemedText type="bodySmall" style={[styles.infoText, { color: theme.textSecondary }]}>
-            Our AI analyzes your inputs and generates an optimized timetable considering teacher
-            availability, room capacity, and subject requirements.
+          <ThemedText
+            type="bodySmall"
+            style={[styles.infoText, { color: theme.textSecondary }]}
+          >
+            Our AI analyzes your inputs and generates an optimized timetable
+            considering teacher availability, room capacity, and subject
+            requirements.
           </ThemedText>
         </View>
 
@@ -95,17 +107,33 @@ export default function AITimetableScreen() {
           {loading && (
             <View style={styles.loadingContainer}>
               <ActivityIndicator size="large" color={theme.primary} />
-              <ThemedText type="body" style={[styles.loadingText, { color: theme.textSecondary }]}>
-                AI is analyzing your inputs and creating an optimized schedule...
+              <ThemedText
+                type="body"
+                style={[styles.loadingText, { color: theme.textSecondary }]}
+              >
+                AI is analyzing your inputs and creating an optimized
+                schedule...
               </ThemedText>
             </View>
           )}
         </View>
 
-        <View style={[styles.tipCard, { backgroundColor: theme.backgroundDefault, borderColor: theme.accent }]}>
-          <ThemedText type="bodySmall" style={[styles.tipText, { color: theme.textSecondary }]}>
-            💡 Tip: Provide detailed constraints for better results. The AI considers factors like
-            teacher preferences, room availability, and student workload distribution.
+        <View
+          style={[
+            styles.tipCard,
+            {
+              backgroundColor: theme.backgroundDefault,
+              borderColor: theme.accent,
+            },
+          ]}
+        >
+          <ThemedText
+            type="bodySmall"
+            style={[styles.tipText, { color: theme.textSecondary }]}
+          >
+            💡 Tip: Provide detailed constraints for better results. The AI
+            considers factors like teacher preferences, room availability, and
+            student workload distribution.
           </ThemedText>
         </View>
       </View>

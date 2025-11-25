@@ -70,7 +70,11 @@ export default function MainTabNavigator() {
         options={{
           title: user?.role === "student" ? "Home" : "Dashboard",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="view-dashboard" size={size} color={color} />
+            <MaterialCommunityIcons
+              name="view-dashboard"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -80,7 +84,11 @@ export default function MainTabNavigator() {
         options={{
           title: "Attendance",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="calendar-check" size={size} color={color} />
+            <MaterialCommunityIcons
+              name="calendar-check"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
@@ -91,7 +99,11 @@ export default function MainTabNavigator() {
           options={{
             title: "Manage",
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="account-group" size={size} color={color} />
+              <MaterialCommunityIcons
+                name="account-group"
+                size={size}
+                color={color}
+              />
             ),
           }}
         />
@@ -102,7 +114,11 @@ export default function MainTabNavigator() {
         options={{
           title: "Events",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="calendar-star" size={size} color={color} />
+            <MaterialCommunityIcons
+              name="calendar-star"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />

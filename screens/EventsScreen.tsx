@@ -70,7 +70,7 @@ export default function EventsScreen() {
     Alert.alert(
       event.title,
       `${event.description}\n\n📅 ${event.date}\n🕐 ${event.time}\n📍 ${event.location}`,
-      [{ text: "Close" }]
+      [{ text: "Close" }],
     );
   };
 
@@ -110,7 +110,7 @@ export default function EventsScreen() {
                 color={getEventTypeColor(item.type)}
               />
             </View>
-            
+
             <View style={styles.eventContent}>
               <View style={styles.eventHeader}>
                 <ThemedText type="body" style={styles.eventTitle}>
@@ -127,15 +127,18 @@ export default function EventsScreen() {
                   }
                 />
               </View>
-              
+
               <ThemedText
                 type="bodySmall"
-                style={[styles.eventDescription, { color: theme.textSecondary }]}
+                style={[
+                  styles.eventDescription,
+                  { color: theme.textSecondary },
+                ]}
                 numberOfLines={2}
               >
                 {item.description}
               </ThemedText>
-              
+
               <View style={styles.eventDetails}>
                 <View style={styles.eventDetail}>
                   <MaterialCommunityIcons
@@ -143,7 +146,10 @@ export default function EventsScreen() {
                     size={16}
                     color={theme.textSecondary}
                   />
-                  <ThemedText type="caption" style={[styles.detailText, { color: theme.textSecondary }]}>
+                  <ThemedText
+                    type="caption"
+                    style={[styles.detailText, { color: theme.textSecondary }]}
+                  >
                     {item.date}
                   </ThemedText>
                 </View>
@@ -153,7 +159,10 @@ export default function EventsScreen() {
                     size={16}
                     color={theme.textSecondary}
                   />
-                  <ThemedText type="caption" style={[styles.detailText, { color: theme.textSecondary }]}>
+                  <ThemedText
+                    type="caption"
+                    style={[styles.detailText, { color: theme.textSecondary }]}
+                  >
                     {item.time}
                   </ThemedText>
                 </View>
@@ -163,7 +172,10 @@ export default function EventsScreen() {
                     size={16}
                     color={theme.textSecondary}
                   />
-                  <ThemedText type="caption" style={[styles.detailText, { color: theme.textSecondary }]}>
+                  <ThemedText
+                    type="caption"
+                    style={[styles.detailText, { color: theme.textSecondary }]}
+                  >
                     {item.location}
                   </ThemedText>
                 </View>

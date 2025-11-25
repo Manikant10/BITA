@@ -162,7 +162,10 @@ function QuickActionButton({ icon, label, onPress }: any) {
       ]}
     >
       <MaterialCommunityIcons name={icon} size={32} color={theme.primary} />
-      <ThemedText type="caption" style={[styles.quickActionLabel, { color: theme.textSecondary }]}>
+      <ThemedText
+        type="caption"
+        style={[styles.quickActionLabel, { color: theme.textSecondary }]}
+      >
         {label}
       </ThemedText>
     </View>

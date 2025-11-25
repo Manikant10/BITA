@@ -13,7 +13,13 @@ interface MetricCardProps {
   onPress?: () => void;
 }
 
-export function MetricCard({ title, value, icon, color, onPress }: MetricCardProps) {
+export function MetricCard({
+  title,
+  value,
+  icon,
+  color,
+  onPress,
+}: MetricCardProps) {
   const { theme } = useTheme();
   const iconColor = color || theme.primary;
 
@@ -30,13 +36,18 @@ export function MetricCard({ title, value, icon, color, onPress }: MetricCardPro
         Shadows.small,
       ]}
     >
-      <View style={[styles.iconContainer, { backgroundColor: iconColor + "20" }]}>
+      <View
+        style={[styles.iconContainer, { backgroundColor: iconColor + "20" }]}
+      >
         <MaterialCommunityIcons name={icon} size={24} color={iconColor} />
       </View>
       <ThemedText type="h2" style={styles.value}>
         {value}
       </ThemedText>
-      <ThemedText type="bodySmall" style={[styles.title, { color: theme.textSecondary }]}>
+      <ThemedText
+        type="bodySmall"
+        style={[styles.title, { color: theme.textSecondary }]}
+      >
         {title}
       </ThemedText>
     </Pressable>

@@ -108,14 +108,19 @@ function ManagementAction({ icon, title, description, onPress }: any) {
         },
       ]}
     >
-      <View style={[styles.actionIcon, { backgroundColor: theme.primary + "20" }]}>
+      <View
+        style={[styles.actionIcon, { backgroundColor: theme.primary + "20" }]}
+      >
         <MaterialCommunityIcons name={icon} size={24} color={theme.primary} />
       </View>
       <View style={styles.actionContent}>
         <ThemedText type="body" style={styles.actionTitle}>
           {title}
         </ThemedText>
-        <ThemedText type="caption" style={[styles.actionDescription, { color: theme.textSecondary }]}>
+        <ThemedText
+          type="caption"
+          style={[styles.actionDescription, { color: theme.textSecondary }]}
+        >
           {description}
         </ThemedText>
       </View>

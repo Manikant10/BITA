@@ -14,7 +14,12 @@ interface AuthContextType {
   user: User | null;
   isLoading: boolean;
   login: (email: string, password: string, role: UserRole) => Promise<void>;
-  register: (name: string, email: string, password: string, role: UserRole) => Promise<void>;
+  register: (
+    name: string,
+    email: string,
+    password: string,
+    role: UserRole,
+  ) => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -52,7 +57,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(mockUser);
   };
 
-  const register = async (name: string, email: string, password: string, role: UserRole) => {
+  const register = async (
+    name: string,
+    email: string,
+    password: string,
+    role: UserRole,
+  ) => {
     const mockUser: User = {
       id: Date.now().toString(),
       name,

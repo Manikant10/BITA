@@ -28,8 +28,13 @@ export function Badge({ label, variant = "primary" }: BadgeProps) {
   };
 
   return (
-    <View style={[styles.badge, { backgroundColor: getBackgroundColor() + "30" }]}>
-      <ThemedText type="caption" style={[styles.text, { color: getBackgroundColor() }]}>
+    <View
+      style={[styles.badge, { backgroundColor: getBackgroundColor() + "30" }]}
+    >
+      <ThemedText
+        type="caption"
+        style={[styles.text, { color: getBackgroundColor() }]}
+      >
         {label}
       </ThemedText>
     </View>

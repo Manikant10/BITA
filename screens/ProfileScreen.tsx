@@ -52,7 +52,7 @@ export default function ProfileScreen() {
       <View style={styles.container}>
         <View style={styles.profileHeader}>
           <LinearGradient
-            colors={theme.gradientPrimary}
+            colors={theme.gradientPrimary as [string, string]}
             style={styles.avatarContainer}
           >
             <MaterialCommunityIcons
@@ -64,11 +64,17 @@ export default function ProfileScreen() {
           <ThemedText type="h1" style={styles.name}>
             {user?.name}
           </ThemedText>
-          <ThemedText type="body" style={[styles.email, { color: theme.textSecondary }]}>
+          <ThemedText
+            type="body"
+            style={[styles.email, { color: theme.textSecondary }]}
+          >
             {user?.email}
           </ThemedText>
           <View style={styles.badgeContainer}>
-            <Badge label={user?.role?.toUpperCase() || ""} variant={getRoleBadgeVariant() as any} />
+            <Badge
+              label={user?.role?.toUpperCase() || ""}
+              variant={getRoleBadgeVariant() as any}
+            />
           </View>
         </View>
 
@@ -76,17 +82,13 @@ export default function ProfileScreen() {
           <ThemedText type="h2" style={styles.sectionTitle}>
             Account Settings
           </ThemedText>
-          
+
           <SettingItem
             icon="account-edit"
             label="Edit Profile"
             onPress={() => {}}
           />
-          <SettingItem
-            icon="bell"
-            label="Notifications"
-            onPress={() => {}}
-          />
+          <SettingItem icon="bell" label="Notifications" onPress={() => {}} />
           <SettingItem
             icon="lock"
             label="Privacy & Security"
@@ -103,22 +105,14 @@ export default function ProfileScreen() {
           <ThemedText type="h2" style={styles.sectionTitle}>
             App Settings
           </ThemedText>
-          
+
           <SettingItem
             icon="theme-light-dark"
             label="Appearance"
             onPress={() => {}}
           />
-          <SettingItem
-            icon="translate"
-            label="Language"
-            onPress={() => {}}
-          />
-          <SettingItem
-            icon="information"
-            label="About"
-            onPress={() => {}}
-          />
+          <SettingItem icon="translate" label="Language" onPress={() => {}} />
+          <SettingItem icon="information" label="About" onPress={() => {}} />
         </View>
 
         <GradientButton

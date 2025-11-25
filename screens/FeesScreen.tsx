@@ -76,7 +76,10 @@ export default function FeesScreen() {
         <View
           style={[
             styles.summaryCard,
-            { backgroundColor: theme.backgroundDefault, borderColor: theme.border },
+            {
+              backgroundColor: theme.backgroundDefault,
+              borderColor: theme.border,
+            },
             Shadows.small,
           ]}
         >
@@ -145,7 +148,10 @@ export default function FeesScreen() {
                     size={14}
                     color={theme.textSecondary}
                   />
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     Due: {item.dueDate}
                   </ThemedText>
                 </View>
@@ -154,11 +160,17 @@ export default function FeesScreen() {
 
             <View style={styles.feeFooter}>
               <ThemedText type="h2">${item.amount}</ThemedText>
-              <Badge label={item.status.toUpperCase()} variant={getStatusBadgeVariant(item.status) as any} />
+              <Badge
+                label={item.status.toUpperCase()}
+                variant={getStatusBadgeVariant(item.status) as any}
+              />
             </View>
 
             {item.paidDate && (
-              <ThemedText type="caption" style={[styles.paidDate, { color: theme.success }]}>
+              <ThemedText
+                type="caption"
+                style={[styles.paidDate, { color: theme.success }]}
+              >
                 Paid on {item.paidDate}
               </ThemedText>
             )}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Alert, ScrollView, Pressable } from "react";
+import { StyleSheet, View, Alert, ScrollView, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -13,7 +13,10 @@ import { Spacing } from "@/constants/theme";
 import { AuthStackParamList } from "@/navigation/AuthNavigator";
 import { ScreenKeyboardAwareScrollView } from "@/components/ScreenKeyboardAwareScrollView";
 
-type LoginScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, "Login">;
+type LoginScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Login"
+>;
 
 export default function LoginScreen() {
   const { theme } = useTheme();
@@ -49,7 +52,10 @@ export default function LoginScreen() {
         <View style={styles.content}>
           <View style={styles.header}>
             <ThemedText type="h1">Welcome Back</ThemedText>
-            <ThemedText type="body" style={[styles.subtitle, { color: theme.textSecondary }]}>
+            <ThemedText
+              type="body"
+              style={[styles.subtitle, { color: theme.textSecondary }]}
+            >
               Sign in to continue
             </ThemedText>
           </View>
@@ -74,7 +80,10 @@ export default function LoginScreen() {
             />
 
             <View style={styles.roleSelector}>
-              <ThemedText type="bodySmall" style={[styles.roleLabel, { color: theme.textSecondary }]}>
+              <ThemedText
+                type="bodySmall"
+                style={[styles.roleLabel, { color: theme.textSecondary }]}
+              >
                 Select Role
               </ThemedText>
               <View style={styles.roleButtons}>
@@ -86,7 +95,9 @@ export default function LoginScreen() {
                       styles.roleButton,
                       {
                         backgroundColor:
-                          role === r ? theme.primary : theme.backgroundSecondary,
+                          role === r
+                            ? theme.primary
+                            : theme.backgroundSecondary,
                         borderColor: role === r ? theme.primary : theme.border,
                       },
                     ]}
@@ -95,7 +106,10 @@ export default function LoginScreen() {
                       type="bodySmall"
                       style={[
                         styles.roleButtonText,
-                        { color: role === r ? theme.buttonText : theme.textSecondary },
+                        {
+                          color:
+                            role === r ? theme.buttonText : theme.textSecondary,
+                        },
                       ]}
                     >
                       {r.charAt(0).toUpperCase() + r.slice(1)}
@@ -105,12 +119,19 @@ export default function LoginScreen() {
               </View>
             </View>
 
-            <GradientButton onPress={handleLogin} disabled={loading} style={styles.loginButton}>
+            <GradientButton
+              onPress={handleLogin}
+              disabled={loading}
+              style={styles.loginButton}
+            >
               {loading ? "Logging in..." : "Login"}
             </GradientButton>
 
             <Pressable onPress={() => navigation.navigate("Register")}>
-              <ThemedText type="body" style={[styles.link, { color: theme.accent }]}>
+              <ThemedText
+                type="body"
+                style={[styles.link, { color: theme.accent }]}
+              >
                 Don't have an account? Sign up
               </ThemedText>
             </Pressable>

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { StyleSheet, TextInput as RNTextInput, View, TextInputProps } from "react-native";
+import {
+  StyleSheet,
+  TextInput as RNTextInput,
+  View,
+  TextInputProps,
+} from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { ThemedText } from "./ThemedText";
 import { useTheme } from "@/hooks/useTheme";
@@ -11,16 +16,26 @@ interface CustomTextInputProps extends TextInputProps {
   icon?: keyof typeof MaterialCommunityIcons.glyphMap;
 }
 
-export function TextInput({ label, error, icon, ...props }: CustomTextInputProps) {
+export function TextInput({
+  label,
+  error,
+  icon,
+  ...props
+}: CustomTextInputProps) {
   const { theme } = useTheme();
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <View style={styles.container}>
-      <ThemedText type="bodySmall" style={[styles.label, { color: theme.textSecondary }]}>
+      <ThemedText
+        type="bodySmall"
+        style={[styles.label, { color: theme.textSecondary }]}
+      >
         {label}
       </ThemedText>
-      <View style={[styles.inputContainer, error && { borderColor: theme.error }]}>
+      <View
+        style={[styles.inputContainer, error && { borderColor: theme.error }]}
+      >
         {icon && (
           <MaterialCommunityIcons
             name={icon}
@@ -48,7 +63,10 @@ export function TextInput({ label, error, icon, ...props }: CustomTextInputProps
         />
       </View>
       {error && (
-        <ThemedText type="caption" style={[styles.error, { color: theme.error }]}>
+        <ThemedText
+          type="caption"
+          style={[styles.error, { color: theme.error }]}
+        >
           {error}
         </ThemedText>
       )}

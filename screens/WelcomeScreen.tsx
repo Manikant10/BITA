@@ -11,7 +11,10 @@ import { useTheme } from "@/hooks/useTheme";
 import { Spacing } from "@/constants/theme";
 import { AuthStackParamList } from "@/navigation/AuthNavigator";
 
-type WelcomeScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, "Welcome">;
+type WelcomeScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Welcome"
+>;
 
 export default function WelcomeScreen() {
   const { theme } = useTheme();
@@ -33,16 +36,25 @@ export default function WelcomeScreen() {
             <ThemedText type="display" style={styles.title}>
               BITA
             </ThemedText>
-            <ThemedText type="body" style={[styles.subtitle, { color: theme.textSecondary }]}>
+            <ThemedText
+              type="body"
+              style={[styles.subtitle, { color: theme.textSecondary }]}
+            >
               Smart Campus Assistant
             </ThemedText>
           </View>
 
           <View style={styles.buttonContainer}>
-            <GradientButton onPress={() => navigation.navigate("Login")} variant="primary">
+            <GradientButton
+              onPress={() => navigation.navigate("Login")}
+              variant="primary"
+            >
               Login
             </GradientButton>
-            <Button onPress={() => navigation.navigate("Register")} style={styles.registerButton}>
+            <Button
+              onPress={() => navigation.navigate("Register")}
+              style={styles.registerButton}
+            >
               Create Account
             </Button>
           </View>

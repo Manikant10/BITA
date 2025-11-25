@@ -112,7 +112,11 @@ export default function LiveAttendanceScreen() {
         data={classes}
         keyExtractor={(item) => item.id}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={theme.primary} />
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={theme.primary}
+          />
         }
         renderItem={({ item }) => {
           const percentage = getAttendancePercentage(item.present, item.total);
@@ -135,7 +139,10 @@ export default function LiveAttendanceScreen() {
                   <ThemedText type="body" style={styles.className}>
                     {item.className} - {item.subject}
                   </ThemedText>
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     {item.teacher}
                   </ThemedText>
                 </View>
@@ -151,7 +158,10 @@ export default function LiveAttendanceScreen() {
                   size={16}
                   color={theme.textSecondary}
                 />
-                <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                <ThemedText
+                  type="caption"
+                  style={{ color: theme.textSecondary }}
+                >
                   {item.time}
                 </ThemedText>
               </View>
@@ -161,7 +171,10 @@ export default function LiveAttendanceScreen() {
                   <ThemedText type="h2" style={{ color: statusColor }}>
                     {item.present}/{item.total}
                   </ThemedText>
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     Present
                   </ThemedText>
                 </View>
@@ -170,7 +183,10 @@ export default function LiveAttendanceScreen() {
                   <ThemedText type="h2" style={{ color: statusColor }}>
                     {percentage}%
                   </ThemedText>
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     Attendance
                   </ThemedText>
                 </View>
@@ -179,13 +195,21 @@ export default function LiveAttendanceScreen() {
                   <ThemedText type="h2" style={{ color: theme.error }}>
                     {item.total - item.present}
                   </ThemedText>
-                  <ThemedText type="caption" style={{ color: theme.textSecondary }}>
+                  <ThemedText
+                    type="caption"
+                    style={{ color: theme.textSecondary }}
+                  >
                     Absent
                   </ThemedText>
                 </View>
               </View>
 
-              <View style={[styles.progressBar, { backgroundColor: theme.backgroundSecondary }]}>
+              <View
+                style={[
+                  styles.progressBar,
+                  { backgroundColor: theme.backgroundSecondary },
+                ]}
+              >
                 <View
                   style={[
                     styles.progressFill,

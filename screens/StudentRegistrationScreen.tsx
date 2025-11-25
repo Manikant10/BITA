@@ -28,7 +28,9 @@ export default function StudentRegistrationScreen() {
 
   const handleSubmit = () => {
     const requiredFields = ["name", "email", "rollNo", "class", "department"];
-    const missingFields = requiredFields.filter((field) => !formData[field as keyof typeof formData]);
+    const missingFields = requiredFields.filter(
+      (field) => !formData[field as keyof typeof formData],
+    );
 
     if (missingFields.length > 0) {
       Alert.alert("Error", "Please fill in all required fields");
@@ -43,14 +45,22 @@ export default function StudentRegistrationScreen() {
           text: "OK",
           onPress: () => navigation.goBack(),
         },
-      ]
+      ],
     );
   };
 
   return (
     <ScreenKeyboardAwareScrollView>
       <View style={styles.container}>
-        <View style={[styles.headerCard, { backgroundColor: theme.backgroundDefault, borderColor: theme.border }]}>
+        <View
+          style={[
+            styles.headerCard,
+            {
+              backgroundColor: theme.backgroundDefault,
+              borderColor: theme.border,
+            },
+          ]}
+        >
           <ThemedText type="h2">Student Registration</ThemedText>
           <ThemedText type="bodySmall" style={{ color: theme.textSecondary }}>
             Add a new student to the system
@@ -61,7 +71,7 @@ export default function StudentRegistrationScreen() {
           <ThemedText type="body" style={styles.sectionTitle}>
             Personal Information
           </ThemedText>
-          
+
           <TextInput
             label="Full Name *"
             value={formData.name}
@@ -94,7 +104,7 @@ export default function StudentRegistrationScreen() {
           <ThemedText type="body" style={styles.sectionTitle}>
             Academic Information
           </ThemedText>
-          
+
           <TextInput
             label="Roll Number *"
             value={formData.rollNo}
@@ -124,7 +134,7 @@ export default function StudentRegistrationScreen() {
           <ThemedText type="body" style={styles.sectionTitle}>
             Guardian Information
           </ThemedText>
-          
+
           <TextInput
             label="Guardian Name"
             value={formData.guardianName}

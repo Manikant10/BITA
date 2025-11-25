@@ -12,7 +12,10 @@ import { Spacing } from "@/constants/theme";
 import { AuthStackParamList } from "@/navigation/AuthNavigator";
 import { ScreenKeyboardAwareScrollView } from "@/components/ScreenKeyboardAwareScrollView";
 
-type RegisterScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, "Register">;
+type RegisterScreenNavigationProp = NativeStackNavigationProp<
+  AuthStackParamList,
+  "Register"
+>;
 
 export default function RegisterScreen() {
   const { theme } = useTheme();
@@ -54,7 +57,10 @@ export default function RegisterScreen() {
         <View style={styles.content}>
           <View style={styles.header}>
             <ThemedText type="h1">Create Account</ThemedText>
-            <ThemedText type="body" style={[styles.subtitle, { color: theme.textSecondary }]}>
+            <ThemedText
+              type="body"
+              style={[styles.subtitle, { color: theme.textSecondary }]}
+            >
               Join BITA to get started
             </ThemedText>
           </View>
@@ -93,7 +99,11 @@ export default function RegisterScreen() {
               icon="lock-check"
             />
 
-            <GradientButton onPress={handleRegister} disabled={loading} style={styles.registerButton}>
+            <GradientButton
+              onPress={handleRegister}
+              disabled={loading}
+              style={styles.registerButton}
+            >
               {loading ? "Creating Account..." : "Create Account"}
             </GradientButton>
           </View>
